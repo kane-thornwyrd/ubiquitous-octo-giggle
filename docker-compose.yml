@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+
+  zookeeper:
+    environment:
+      ZOOKEEPER_VERSION: 3.4.12
+    image: wurstmeister/zookeeper:3.4.6
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: wurstmeister/kafka:1.1.0
+    ports:
+      - "9092"
+    environment:
+      HOSTNAME_COMMAND: "route -n | awk '/UG[ \t]/{print $$2}'"
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CREATE_TOPICS: "T:1:1"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  kafdrop:
+    image: thomsch98/kafdrop:latest
+    ports:
+    - "9010:9010"
+    environment:
+    - "ZK_HOSTS=zookeeper:2181"
+    - "LISTEN=9010"
