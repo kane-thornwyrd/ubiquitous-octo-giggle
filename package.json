@@ -4,11 +4,10 @@
   "version": "0.0.0-development",
   "description": "kafka zookeeper microservices fun",
   "scripts": {
-    "save": "npm run precommit && git-cz",
+    "save": "git-cz",
     "test": "lerna run test",
     "release": "lerna-semantic-release pre && lerna-semantic-release perform && lerna-semantic-release post",
-    "complexity-report": "./node_modules/.bin/es6-plato -r -d ./report packages",
-    "precommit": "npm run test & pretty-quick --staged"
+    "complexity-report": "es6-plato -r -d ./report packages"
   },
   "repository": {
     "type": "git",
@@ -31,6 +30,7 @@
     "commitizen": "2.10.1",
     "cz-lerna-changelog": "1.2.1",
     "es6-plato": "1.0.18",
+    "husky": "1.0.0-rc.8",
     "lerna": "2.11.0",
     "lerna-semantic-release": "9.1.0",
     "prettier": "1.13.5",
@@ -42,6 +42,11 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-lerna-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+        "pre-commit": "npm run test && pretty-quick --staged && complexity-report"
     }
   }
 }
