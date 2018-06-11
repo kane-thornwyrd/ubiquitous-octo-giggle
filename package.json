@@ -8,7 +8,7 @@
     "test": "lerna run test",
     "release": "lerna-semantic-release pre && lerna-semantic-release perform && lerna-semantic-release post",
     "complexity-report": "./node_modules/.bin/es6-plato -r -d ./report packages",
-    "precommit": "npm run test & pretty-quick --staged & npm run complexity-report"
+    "precommit": "npm run test & pretty-quick --staged"
   },
   "repository": {
     "type": "git",
