@@ -4,7 +4,7 @@
   "version": "0.0.0-development",
   "description": "kafka zookeeper microservices fun",
   "scripts": {
-    "save": "npm run precommit & git-cz",
+    "save": "npm run precommit && git-cz",
     "test": "lerna run test",
     "release": "lerna-semantic-release pre && lerna-semantic-release perform && lerna-semantic-release post",
     "complexity-report": "./node_modules/.bin/es6-plato -r -d ./report packages",
