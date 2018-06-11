@@ -7,7 +7,9 @@
     "save": "git-cz",
     "test": "lerna run test",
     "release": "lerna-semantic-release pre && lerna-semantic-release perform && lerna-semantic-release post",
-    "complexity-report": "./node_modules/.bin/es6-plato -r -d ./report packages"
+    "complexity-report": "./node_modules/.bin/es6-plato -r -d ./report packages",
+    "pretty-quick": "pretty-quick",
+    "precommit": "npm run test & pretty-quick --staged & npm run complexity-report"
   },
   "repository": {
     "type": "git",
@@ -43,7 +45,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test & pretty-quick --staged & npm run complexity-report"
+
     }
   }
 }
