@@ -6,6 +6,7 @@
   "scripts": {
     "save": "git-cz",
     "test": "lerna run test",
+    "lint": "eslint packages",
     "release": "lerna-semantic-release pre && lerna-semantic-release perform && lerna-semantic-release post",
     "complexity-report": "es6-plato -r -d ./report packages"
   },
@@ -27,9 +28,15 @@
   },
   "homepage": "https://github.com/kane-thornwyrd/ubiquitous-octo-giggle#readme",
   "devDependencies": {
+    "babel-eslint": "8.2.3",
     "commitizen": "2.10.1",
     "cz-lerna-changelog": "1.2.1",
     "es6-plato": "1.0.18",
+    "eslint": "4.19.1",
+    "eslint-config-payfit": "0.3.1",
+    "eslint-import-resolver-lerna": "1.0.0",
+    "eslint-plugin-import": "2.12.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
     "husky": "1.0.0-rc.8",
     "lerna": "2.11.0",
     "lerna-semantic-release": "9.1.0",
@@ -46,7 +53,7 @@
   },
   "husky": {
     "hooks": {
-        "pre-commit": "npm run test && pretty-quick --staged && complexity-report"
+      "pre-commit": "npm run test && pretty-quick --staged"
     }
   }
 }
