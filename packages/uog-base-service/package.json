@@ -1,0 +1,11 @@
+{
+  "name": "uog-base-service",
+  "version": "0.0.0-development",
+  "description": "Common code for uog services.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jean-cédric Thérond <jean.cedric.t@gmail.com>",
+  "license": "GPL-3.0"
+}

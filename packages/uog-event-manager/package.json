@@ -1,0 +1,11 @@
+{
+  "name": "uog-event-manager",
+  "version": "0.0.0-development",
+  "description": "Help to manage the event and allow injecting and replay.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jean-cédric Thérond <jean.cedric.t@gmail.com>",
+  "license": "GPL-3.0"
+}
